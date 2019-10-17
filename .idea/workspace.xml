@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fdb02d7f-bd3c-4e2c-a4d0-f34e88ae9a0d" name="Default Changelist" comment="sample file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +114,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570755887450</updated>
-      <workItem from="1570755891456" duration="4736000" />
+      <workItem from="1570755891456" duration="6398000" />
     </task>
     <task id="LOCAL-00001" summary="sample file 追加">
       <created>1570759562456</created>
@@ -149,7 +151,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571103232498</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ちょっと変更">
+      <created>1571276334223</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571276334223</updated>
+    </task>
+    <task id="LOCAL-00007" summary="sample file">
+      <created>1571278119865</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571278119865</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,13 +183,13 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sample file" />
     <MESSAGE value="sample file 追加" />
     <MESSAGE value="Procfile 追加" />
     <MESSAGE value="テキストfile 追加" />
-    <MESSAGE value="ちょっと変更" />
     <MESSAGE value="ちょっと変更(10/15)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ちょっと変更(10/15)" />
+    <MESSAGE value="ちょっと変更" />
+    <MESSAGE value="sample file" />
+    <option name="LAST_COMMIT_MESSAGE" value="sample file" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1284" height="844" key="Git.Branch.Popup" />
