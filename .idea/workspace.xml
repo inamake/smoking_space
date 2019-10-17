@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdb02d7f-bd3c-4e2c-a4d0-f34e88ae9a0d" name="Default Changelist" comment="sample file" />
+    <list default="true" id="fdb02d7f-bd3c-4e2c-a4d0-f34e88ae9a0d" name="Default Changelist" comment="sample file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570755887450</updated>
-      <workItem from="1570755891456" duration="4188000" />
+      <workItem from="1570755891456" duration="4736000" />
     </task>
     <task id="LOCAL-00001" summary="sample file 追加">
       <created>1570759562456</created>
