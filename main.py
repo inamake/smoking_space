@@ -50,6 +50,11 @@ def return_address(event):
     # address = event.message.address
     lat = event.message.latitude
     lon = event.message.longitude
+    text = "緯度 : [{0}], 経度 : [{1}]".format(lat, lon)
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=text)
+    )
 
 
 
