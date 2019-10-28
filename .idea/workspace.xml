@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a8f66f15-f928-4ec9-bbf2-c056a5f5002d" name="Default Changelist" comment="サンプルファイル作成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oumugaeshi.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +54,7 @@
       </branch-storage>
     </excluded-from-favorite>
   </component>
+  <component name="ProjectId" id="1SdDvmKOk3FBkB3TzvQQFJxxoPM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -125,6 +125,7 @@
       <workItem from="1571478530177" duration="1123000" />
       <workItem from="1571491858993" duration="110000" />
       <workItem from="1571491972357" duration="3195000" />
+      <workItem from="1571884812709" duration="963000" />
     </task>
     <task id="LOCAL-00001" summary="サンプルファイル作成">
       <created>1571491930208</created>
@@ -146,7 +147,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
