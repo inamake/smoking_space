@@ -19,7 +19,8 @@ app = Flask(__name__)
 name = "not_date"
 postal_code_three_digits = "not_date"
 address = "not_date"
-registration_data=[name,postal_code_three_digits,address]
+registration_data={"name":"not_date","postal_code_three_digits":"not_date","address":"not_date"}
+
 
 #環境変数取得
 LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
@@ -52,7 +53,7 @@ def callback():
 #        event.reply_token,
 #        TextSendMessage(text=event.message.text))
 
-#アプリ起動。検索か登録か選択を行う。
+#アプリ起動を行う。
 @handler.add(MessageEvent, message=TextMessage)
 def start(event):
     if event.message.text == "喫煙所":
@@ -60,6 +61,7 @@ def start(event):
             event.reply_token,
             TextSendMessage(text="「位置情報」を送ってください。")
         )
+        return_postal_code()
     else:
         line_bot_api.reply_message(
             event.reply_token,
