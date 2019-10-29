@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from flask import Flask, request, abort
 
 from linebot import (
@@ -14,9 +16,9 @@ import os
 app = Flask(__name__)
 
 #登録データ（リスト）の作成
-name = ""
-postal_code_three_digits = ""
-address = ""
+name = "not_date"
+postal_code_three_digits = "not_date"
+address = "not_date"
 registration_data=[name,postal_code_three_digits,address]
 
 #環境変数取得
@@ -43,13 +45,28 @@ def callback():
 
     return 'OK'
 
+#おうむ返しする。
+#@handler.add(MessageEvent, message=TextMessage)
+#def handle_message(event):
+#    line_bot_api.reply_message(
+#        event.reply_token,
+#        TextSendMessage(text=event.message.text))
 
+#アプリ起動。検索か登録か選択を行う。
 @handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text))
-
+def start(event):
+    if event.message.text == "喫煙所":
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="「位置情報」を送ってください。")
+            @ handler.add(MessageEvent, message=LocationMessage)
+            
+        )
+    else:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="「喫煙所」と入力してアプリを起動してください。")
+        )
 
 @handler.add(MessageEvent, message=LocationMessage)
 
@@ -75,8 +92,8 @@ def return_postal_code(event):
             TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
         ]
     )
-    registration_data[address] = Address
-    registration_data[postal_code_three_digits] = Postal_code_frist3
+    registration_data[2] = Address
+    registration_data[1] = Postal_code_frist3
     print(registration_data)
 
 if __name__ == "__main__":
