@@ -58,15 +58,15 @@ def handle_message(event):
 #        ]
 #    )
 
-#位置情報から郵便番号と郵便番号上3桁を返す。
+#位置情報から郵便番号と郵便番号上3桁と住所を返す。
 def return_postal_code(event):
     address = event.message.address
-    postal_code_frist3 = address[5:7]
-    postal_code = postal_code_frist3 + address[9:12]
+    postal_code_frist3 = address[4:7]
+    #postal_code = postal_code_frist3 + address[8:12]
     line_bot_api.reply_message(
         event.reply_token,
         [
-            TextSendMessage(text="郵便番号:[{}]\n郵便番号上3桁:[{}]".format(postal_code,postal_code_frist3)),
+            TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(postal_code_frist3,address)),
         ]
     )
 
