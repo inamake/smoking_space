@@ -49,7 +49,7 @@ def return_address(event):
     line_bot_api.reply_message(
         event.reply_token,
         [
-            TextSendMessage(text="緯度:[{}]\n経度:[{}]".format(event.message.latitude,event.message.longitude)),
+            TextSendMessage(text="住所:\n[{}]\n緯度:\n[{}]\n経度:\n[{}]".format(event.message.address,event.message.latitude,event.message.longitude)),
         ]
     )
 
