@@ -64,7 +64,9 @@ def return_postal_code(event):
     postal_code = postal_code_frist3 + address[9:12]
     line_bot_api.reply_message(
         event.reply_token,
+        [
         TextSendMessage(text="郵便番号:[{}]\n郵便番号上3桁:[{}]\n".format(postal_code,postal_code_frist3)),
+        ]
     )
 
 if __name__ == "__main__":
