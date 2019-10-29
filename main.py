@@ -59,8 +59,6 @@ def start(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="「位置情報」を送ってください。")
-            @ handler.add(MessageEvent, message=LocationMessage)
-            
         )
     else:
         line_bot_api.reply_message(
@@ -84,7 +82,7 @@ def start(event):
 #位置情報から郵便番号と郵便番号上3桁と住所を返す。
 def return_postal_code(event):
     Address = event.message.address
-    Postal_code_frist3 = address[4:7]
+    Postal_code_frist3 = Address[4:7]
     #postal_code = postal_code_frist3 + address[8:12]
     line_bot_api.reply_message(
         event.reply_token,
