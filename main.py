@@ -46,16 +46,17 @@ def handle_message(event):
 
 
 @handler.add(MessageEvent, message=LocationMessage)
-# 位置情報から住所、緯度、経度を返す。
-def return_address(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        [
-            TextSendMessage(text="住所:\n[{}]\n緯度:\n[{}]\n経度:\n[{}]".format(event.message.address,
-            event.message.latitude,event.message.longitude)),
-        ]
-    )
 
+
+# 位置情報から住所、緯度、経度を返す。
+#def return_address(event):
+#    line_bot_api.reply_message(
+#        event.reply_token,
+#        [
+#            TextSendMessage(text="住所:\n[{}]\n緯度:\n[{}]\n経度:\n[{}]".format(event.message.address,
+#            event.message.latitude,event.message.longitude)),
+#        ]
+#    )
 
 #位置情報から郵便番号と郵便番号上3桁を返す。
 def return_postal_code(event):
@@ -65,7 +66,7 @@ def return_postal_code(event):
     line_bot_api.reply_message(
         event.reply_token,
         [
-        TextSendMessage(text="郵便番号:[{}]\n郵便番号上3桁:[{}]\n".format(postal_code,postal_code_frist3)),
+            TextSendMessage(text="郵便番号:[{}]\n郵便番号上3桁:[{}]".format(postal_code,postal_code_frist3)),
         ]
     )
 
