@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8f66f15-f928-4ec9-bbf2-c056a5f5002d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conf.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oumugaeshi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/test/dictionary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoking_space/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoking_space/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoking_space/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoking_space/wsgi.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +17,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="-2">
+              <caret selection-end-line="1" />
+              <folding>
+                <element signature="e#25#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Model/test/dictionary.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -47,7 +51,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/oumugaessi" />
+        <entry key="$PROJECT_DIR$" value="develop/smoking_space" />
       </map>
     </option>
     <favorite-branches>
@@ -83,6 +87,7 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/conf.json" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/Model/test/dictionary.py" />
       </list>
     </option>
   </component>
@@ -105,6 +110,17 @@
             <path>
               <item name="smoking_space" type="b2602c69:ProjectViewProjectNode" />
               <item name="smoking_space" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smoking_space" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smoking_space" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smoking_space" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smoking_space" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -176,20 +192,22 @@
       <workItem from="1571491858993" duration="110000" />
       <workItem from="1571491972357" duration="3195000" />
     </task>
-    <task id="LOCAL-00001" summary="サンプルファイル作成">
-      <created>1571491930208</created>
+    <task id="LOCAL-00001" summary="ローカルの変更を保存">
+      <created>1572374097031</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1571491930208</updated>
+      <updated>1572374097031</updated>
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15845000" />
+    <option name="totallyTimeSpent" value="18151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1353" y="33" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.15570469" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -262,7 +280,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="サンプルファイル作成" />
-    <option name="LAST_COMMIT_MESSAGE" value="サンプルファイル作成" />
+    <MESSAGE value="ローカルの変更を保存" />
+    <option name="LAST_COMMIT_MESSAGE" value="ローカルの変更を保存" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/heroku/index.py" />
@@ -326,8 +345,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="-2">
+          <caret selection-end-line="1" />
+          <folding>
+            <element signature="e#25#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/test/dictionary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
         </state>
       </provider>
     </entry>
