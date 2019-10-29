@@ -13,6 +13,12 @@ import os
 
 app = Flask(__name__)
 
+#登録データ（リスト）の作成
+name = ""
+postal_code_three_digits = ""
+address = ""
+registration_data=[name,postal_code_three_digits,address]
+
 #環境変数取得
 LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
 LINE_CHANNEL_SECRET = os.environ["LINE_CHANNEL_SECRET"]
@@ -60,15 +66,18 @@ def handle_message(event):
 
 #位置情報から郵便番号と郵便番号上3桁と住所を返す。
 def return_postal_code(event):
-    address = event.message.address
-    postal_code_frist3 = address[4:7]
+    Address = event.message.address
+    Postal_code_frist3 = address[4:7]
     #postal_code = postal_code_frist3 + address[8:12]
     line_bot_api.reply_message(
         event.reply_token,
         [
-            TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(postal_code_frist3,address)),
+            TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
         ]
     )
+    registration_data[address] = Address
+    registration_data[postal_code_three_digits] = Postal_code_frist3
+    print(registration_data)
 
 if __name__ == "__main__":
 #    app.run()
