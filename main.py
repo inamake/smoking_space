@@ -86,19 +86,26 @@ def start(event):
 #    )
 
 #位置情報から郵便番号と郵便番号上3桁と住所を返す。
-def return_postal_code(event):
+def address_info(event):
     global addressData
     global sw0
     if sw0 == True and event.message.type == 'location':
-        Address = event.message.address
-        Postal_code_frist3 = Address[4:7]
-        addressData[Postal_code_frist3]["Address"] = Address
+        title = event.message.title
+        address = event.message.address
+        latiude = event.message.latitude
+        longitude = event.message.longitude
+        postal_code_frist3 = address[4:7]
+        addressData[postal_code_frist3]["tilte"] = title
+        addressData[postal_code_frist3]["address"] = address
+        addressData[postal_code_frist3]["latiude"] = latiude
+        addressData[postal_code_frist3]["longitude"] = longitude
+
         #postal_code = postal_code_frist3 + address[8:12]
         line_bot_api.reply_message(
             event.reply_token,
             [
                 #TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
-                TextSendMessage(text=addressData[Postal_code_frist3]["Address"])
+                TextSendMessage(text="{}".format(addressData))
             ]
         )
         sw0 = False
