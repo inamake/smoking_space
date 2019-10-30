@@ -97,7 +97,8 @@ def return_postal_code(event):
         line_bot_api.reply_message(
             event.reply_token,
             [
-                TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
+                #TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
+                TextSendMessage(text=addressData)
             ]
         )
         sw0 = False
