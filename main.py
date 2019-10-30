@@ -67,7 +67,7 @@ def start(event):
             TextSendMessage(text="『位置情報』を送ってください。")
         )
         sw0 = True
-    else:
+    elif sw0 == False:
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="『喫煙所』と入力してアプリを起動してください。")
@@ -100,14 +100,13 @@ def return_postal_code(event):
                 TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
             ]
         )
+        sw0 = False
 
     else:
         line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text="『位置情報』を送ってください。")
         )
-        sw1 = True
-
 
 
 if __name__ == "__main__":
