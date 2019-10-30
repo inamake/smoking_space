@@ -67,6 +67,7 @@ def start(event):
             TextSendMessage(text="『位置情報』を送ってください。")
         )
         sw0 = True
+
     elif sw0 == False:
         line_bot_api.reply_message(
             event.reply_token,
@@ -89,7 +90,7 @@ def start(event):
 #位置情報から郵便番号と郵便番号上3桁と住所を返す。
 def return_postal_code(event):
     global registration_data
-    global sw1
+    global sw0
     if sw0 == True:
         Address = event.message.address
         Postal_code_frist3 = Address[4:7]
@@ -107,7 +108,7 @@ def return_postal_code(event):
         event.reply_token,
         TextSendMessage(text="『位置情報』を送ってください。")
         )
-
+        sw0 = False
 
 if __name__ == "__main__":
 #    app.run()
