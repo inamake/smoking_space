@@ -98,7 +98,7 @@ def return_postal_code(event):
             event.reply_token,
             [
                 #TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
-                TextSendMessage(text=addressData)
+                TextSendMessage(text=addressData[Postal_code_frist3]["Address"])
             ]
         )
         sw0 = False
