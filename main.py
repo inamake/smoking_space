@@ -2,6 +2,8 @@
 
 from flask import Flask, request, abort
 
+from collections import defaultdict
+
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -15,11 +17,11 @@ import os
 
 app = Flask(__name__)
 
-#登録データ（リスト）の作成
-name = "not_date"
-postal_code_three_digits = "not_date"
-address = "not_date"
-registration_data={"name":"not_date","postal_code_three_digits":"not_date","address":"not_date"}
+#空の辞書を宣言
+addressData = defaultdict(dict)
+
+#分岐スイッチ
+sw0 = False
 
 
 #環境変数取得
@@ -56,22 +58,24 @@ def callback():
 #アプリ起動を行う。
 @handler.add(MessageEvent, message=TextMessage)
 def start(event):
-    if event.message.text == "喫煙所":
+    global sw0
+    if event.message.text == "喫煙所" and sw0 == False:
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="「位置情報」を送ってください。")
+            TextSendMessage(text="登録を行います。\n『位置情報』を送ってください。")
         )
-        return_postal_code()
-    else:
+        sw0 = True
+
+    elif sw0 == False:
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="「喫煙所」と入力してアプリを起動してください。")
+            TextSendMessage(text="『喫煙所』と入力してアプリを起動してください。")
         )
 
 @handler.add(MessageEvent, message=LocationMessage)
 
 
-# 位置情報から住所、緯度、経度を返す。
+#位置情報から住所、緯度、経度を返す。
 #def return_address(event):
 #    line_bot_api.reply_message(
 #        event.reply_token,
@@ -83,18 +87,29 @@ def start(event):
 
 #位置情報から郵便番号と郵便番号上3桁と住所を返す。
 def return_postal_code(event):
-    Address = event.message.address
-    Postal_code_frist3 = Address[4:7]
-    #postal_code = postal_code_frist3 + address[8:12]
-    line_bot_api.reply_message(
+    global addressData
+    global sw0
+    if sw0 == True and event.message.type == 'location':
+        Address = event.message.address
+        Postal_code_frist3 = Address[4:7]
+        addressData[Postal_code_frist3]["Address"] = Address
+        #postal_code = postal_code_frist3 + address[8:12]
+        line_bot_api.reply_message(
+            event.reply_token,
+            [
+                TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
+            ]
+        )
+        sw0 = False
+
+
+
+    else:
+        line_bot_api.reply_message(
         event.reply_token,
-        [
-            TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
-        ]
-    )
-    registration_data[2] = Address
-    registration_data[1] = Postal_code_frist3
-    print(registration_data)
+        TextSendMessage(text="『位置情報』を送ってください。")
+        )
+        sw0 = False
 
 if __name__ == "__main__":
 #    app.run()

@@ -4,28 +4,30 @@ from collections import defaultdict
 
 addressData = defaultdict(dict)
 
+
+
 # TODO: 仮データを適当に作成する
-code1 = "111"
-address1 = "ああああああああああああああああああああああ"
-name1 = "name1"
+code1 = "650"
+address1 = "toukyou"
+name1 = "tokyo"
 # latitude1 = ..........
 # ..........
 
-code2 = "222"
-address2 = "いいいいいいいいいいいいいい"
-name2 = "name2"
+code2 = "651"
+address2 = "oosaka"
+name2 = "osaka"
 
-code3 = "333"
-address3 = "うううううううううううううううううううううううううううう"
-name3 = "name3"
+code3 = "650"
+address3 = "koube"
+name3 = "kobe"
 
-code4 = "111"
-address4 = "aaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbccccccccccccccccccccccccccccccccc"
-name4 = "name4"
+code4 = "652"
+address4 = "kyouto"
+name4 = "kyoto"
 
-code5 = "111"
-address5 = "ddddddddddddd"
-name5 = "name5"
+code5 = "651"
+address5 = "hirosima"
+name5 = "hiroshima"
 
 
 addressData[code1]["address"] = address1
@@ -52,14 +54,14 @@ addressData[code5]["name"] = name5
 print(addressData)
 
 # 各codeで検索してみる
-test_code1 = "222"
-test_code2 = "123"
+test_code1 = "650"
+test_code2 = "652"
 print(addressData[test_code1])
 print(addressData[test_code2])
 
 # 特定のcodeのaddressを取得してみる
-test_code3 = "111"
-test_code4 = "123"
+test_code3 = "651"
+test_code4 = "652"
 print(addressData[test_code3]["address"])
 print(addressData[test_code4]["address"])
 
