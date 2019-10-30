@@ -61,7 +61,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def start(event):
     global sw0
-    if event.message.text == "喫煙所":
+    if event.message.text == "喫煙所" and sw0 == False:
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="『位置情報』を送ってください。")
@@ -107,7 +107,7 @@ def return_postal_code(event):
         TextSendMessage(text="『位置情報』を送ってください。")
         )
         sw1 = True
-        
+
 
 
 if __name__ == "__main__":
