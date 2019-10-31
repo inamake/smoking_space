@@ -67,31 +67,24 @@ def callback():
 #位置情報からタイトル、郵便番号上3桁、郵便番号、住所、緯度、経度を辞書に入れて返す。
 def address_info(event):
     global addressData
-    if event.message.type == 'location':
-        title = event.message.title
-        address = event.message.address
-        latiude = event.message.latitude
-        longitude = event.message.longitude
-        postal_code_frist3 = address[4:7]
-        addressData[postal_code_frist3]["tilte"] = title
-        addressData[postal_code_frist3]["address"] = address
-        addressData[postal_code_frist3]["latiude"] = latiude
-        addressData[postal_code_frist3]["longitude"] = longitude
+    title = event.message.title
+    address = event.message.address
+    latiude = event.message.latitude
+    longitude = event.message.longitude
+    postal_code_frist3 = address[4:7]
+    addressData[postal_code_frist3]["tilte"] = title
+    addressData[postal_code_frist3]["address"] = address
+    addressData[postal_code_frist3]["latiude"] = latiude
+    addressData[postal_code_frist3]["longitude"] = longitude
 
-        #postal_code = postal_code_frist3 + address[8:12]
-        line_bot_api.reply_message(
-            event.reply_token,
-            [
-                #TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
-                TextSendMessage(text="{}".format(addressData))
-            ]
-        )
-
-    else:
-        line_bot_api.reply_message(
+    #postal_code = postal_code_frist3 + address[8:12]
+    line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text="『位置情報』を送ってください。")
-        )
+        [
+            #TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
+            TextSendMessage(text="{}".format(addressData))
+        ]
+    )
 
 if __name__ == "__main__":
 #    app.run()
