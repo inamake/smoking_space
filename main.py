@@ -94,7 +94,7 @@ def address_info(event):
         event.reply_token,
         [
             #TextSendMessage(text="郵便番号上3桁:\n[{}]\n住所:\n[{}]".format(Postal_code_frist3,Address)),
-            TextSendMessage(text="{}".format(adddata))
+            TextSendMessage(text="{}".format(address_datas))
         ]
     )
 
