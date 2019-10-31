@@ -14,7 +14,7 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, LocationMessage,
 )
 import os
-import json, codecs
+import json
 
 app = Flask(__name__)
 
@@ -79,15 +79,15 @@ def address_info(event):
     addressData[postal_code_frist3]["longitude"] = longitude
 
     #jsonファイル読み込み
-    address_datas = codecs.open("address_data.json", 'r', encoding='utf-8')
+    address_datas = open("address_data.json", 'r',)
     address_datas = json.load(address_datas)
 
     #アドレスの連結
     address_datas.update(addressData)
 
     #jsonファイル書き込み
-    adddata = codecs.open("address_data.json", 'w', encoding='utf-8')
-    json.dump(address_datas, adddata, ensure_ascii=False)
+    adddata = open("address_data.json", 'w')
+    json.dump(address_datas, adddata)
 
     #postal_code = postal_code_frist3 + address[8:12]
     line_bot_api.reply_message(
