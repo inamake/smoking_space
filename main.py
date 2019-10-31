@@ -20,10 +20,6 @@ app = Flask(__name__)
 #空の辞書を宣言
 addressData = defaultdict(dict)
 
-#分岐スイッチ
-sw0 = False
-
-
 #環境変数取得
 LINE_CHANNEL_ACCESS_TOKEN = os.environ["LINE_CHANNEL_ACCESS_TOKEN"]
 LINE_CHANNEL_SECRET = os.environ["LINE_CHANNEL_SECRET"]
@@ -55,23 +51,6 @@ def callback():
 #        event.reply_token,
 #        TextSendMessage(text=event.message.text))
 
-#アプリ起動を行う。
-@handler.add(MessageEvent, message=TextMessage)
-def start(event):
-    global sw0
-    if event.message.text == "喫煙所" and sw0 == False:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text="登録を行います。\n『位置情報』を送ってください。")
-        )
-        sw0 = True
-
-    elif sw0 == False:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text="『喫煙所』と入力してアプリを起動してください。")
-        )
-
 @handler.add(MessageEvent, message=LocationMessage)
 
 
@@ -85,11 +64,10 @@ def start(event):
 #        ]
 #    )
 
-#位置情報から郵便番号と郵便番号上3桁と住所を返す。
+#位置情報からタイトル、郵便番号上3桁、郵便番号、住所、緯度、経度を辞書に入れて返す。
 def address_info(event):
     global addressData
-    global sw0
-    if sw0 == True and event.message.type == 'location':
+    if event.message.type == 'location':
         title = event.message.title
         address = event.message.address
         latiude = event.message.latitude
@@ -108,16 +86,12 @@ def address_info(event):
                 TextSendMessage(text="{}".format(addressData))
             ]
         )
-        sw0 = False
-
-
 
     else:
         line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text="『位置情報』を送ってください。")
         )
-        sw0 = False
 
 if __name__ == "__main__":
 #    app.run()
